@@ -1,6 +1,7 @@
 package com.springboot.hello.controller;
 
 
+import com.springboot.hello.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -71,5 +72,10 @@ public class GetController {
         param.entrySet().forEach(map -> sb.append(map.getKey()
          + " : " + map.getValue()+ "\n") );
         return sb.toString();
+    }
+
+    @GetMapping("/request4")
+    public MemberDto getRequestParam3(MemberDto memberDto){
+        return memberDto;
     }
 }
