@@ -1,5 +1,6 @@
 package com.springboot.hello.controller;
 
+import com.springboot.hello.dto.MemberDto;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,19 @@ public class PutController {
         putData.entrySet().forEach(map -> sb.append(map.getKey() + ":::" + map.getValue() + "\n")  );
 
         return sb.toString();
+    }
+
+
+    // DTO로 구성하는 방식 2가지 설정
+    @PutMapping("/member1")
+    public String postMemberDto1(@RequestBody MemberDto memberDto){
+        return memberDto.toString();
+    }
+
+    // return 그대로 String으로 하지 않는 방식
+    @PutMapping("/member2")
+    public MemberDto postMemberDto2(@RequestBody MemberDto memberDto){
+        return memberDto;
     }
 
 
