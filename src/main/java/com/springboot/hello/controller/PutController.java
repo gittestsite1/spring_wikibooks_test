@@ -41,7 +41,7 @@ public class PutController {
     @PutMapping("/member3")
     public ResponseEntity<MemberDto> postMemberDto3(@RequestBody MemberDto memberDto){
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
+                .status(HttpStatus.BAD_GATEWAY)
                 .body(memberDto);
     }
 }
