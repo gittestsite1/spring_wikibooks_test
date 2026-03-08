@@ -1,5 +1,6 @@
 package com.springboot.hello.controller;
 
+import com.springboot.hello.dto.MemberDto;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,4 +29,14 @@ public class PostController {
         return sb.toString();
 
     }
+
+    // Json을 DTO로 정의된 것을 이용하는 방식
+    //     private String name;
+    //    private String email;
+    //    private String organization;
+    @PostMapping("/member2")
+    public String postMemberDto(@RequestBody MemberDto memberDto){
+        return memberDto.toString();
+    }
+
 }
